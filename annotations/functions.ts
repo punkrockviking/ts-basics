@@ -17,3 +17,27 @@ const logger = (message: string): void => {
 const throwError = (message: string): never => {
   throw new Error(message);
 }; // this is basically never going to happen. very rare
+
+const forecast = {
+  date: new Date(),
+  weather: 'sunny',
+};
+
+// const logWeather = (forecast: { date: Date; weather: string }): void => {
+//   console.log(forecast.date);
+//   console.log(forecast.weather);
+// };
+
+// ES2015 destructuring
+// const logWeather = ({ date, weather }) => {
+//   console.log(date)
+//   console.log(weather)
+// }
+
+// destructuring with TS
+const logWeather = ({ date, weather }: { date: Date; weather: string }) => {
+  console.log(date);
+  console.log(weather);
+};
+
+logWeather(forecast);
